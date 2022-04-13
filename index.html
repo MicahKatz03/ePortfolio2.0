@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./index.js"></script>
+    <script src="https://kit.fontawesome.com/fff14610ff.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+</script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("0fxRXiNUKZXTygyBr");
+   })();
+</script>
+</head>
+
+<body>
+        <section id="landing-page">
+            <nav>
+                <figure>
+                    <div id="me-img-wrapper">
+                        <img id="me-img" src="./images/me.jpg" alt="">
+                    </div>
+                </figure>
+                <ul class="nav--links">
+                    <li class="nav--link-item">
+                        <a href="#" class="nav--link link-effect link-effect-black">About</a>
+                    </li>
+                    <li class="nav--link-item">
+                        <a href="#projects" class="nav--link link-effect link-effect-black">Projects</a>
+                    </li>
+                    <li class="nav--link-item">
+                        <a href="#" class="nav--link link-effect link-effect-black" onclick="toggleModal()">Contact</a>
+                    </li>
+                    <li class="nav--link-item click">
+                        <a href="#" class="nav--link"><i class="fa-solid fa-moon"></i>
+                            <!--<i class="fa-solid fa-sun"></i> light icon-->
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <header class="header">
+                <div class="header--content">
+                    <h1 class="title">Hello</h1>
+                    <h1 class="title blue">I'm Micah.</h1>
+                    <p class="title-p">I'm an aspiring <b class="blue">Frontend Software Engineer</b> looking to make
+                        beautiful applications with great user experiences.<br>Learn more <b class="blue" id="about" onclick="toggleModal()">about me.</b>
+                    </p>
+                    <div class="mini-links-list">
+                        <a href="https://github.com/MicahKatz03" target="_blank" class="mini-link click" id="git"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="#" target="_blank" class="mini-link click" id="inst"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" class="mini-link click" id="disc"><i
+                                class="fa-brands fa-discord"></i></a>
+                    </div>
+                </div>
+            </header>
+            <button class="mail-btn click" onclick="toggleModal()"><i class="fa-solid fa-envelope"></i></button>
+            <a href="#projects" class="scroll">
+                <div class="scroll-icon click"></div>
+            </a>
+            <div class="modal">
+                <div class="modal-half modal-about">
+                    <h3 class="modal-title title-black">About me.</h3>
+                    <h4 class="modal-subtitle subtitle-black">Frontend Software Engineer</h4>
+                    <p class="modal-p p-black">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum esse cupiditate suscipit molestiae voluptate reiciendis repellendus velit et non quos!
+                        <br>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Qui eligendi accusamus, sapiente quidem illo repudiandae quae quis porro maxime doloremque.
+                    </p>
+                    <div class="modal-lang">
+                        <figure class="lang-img-wrap">
+                            <img src="./images/html.png" alt="" class="lang-img">
+                            <span class="lang-name">HTML</span>
+                        </figure>
+                        <figure class="lang-img-wrap">
+                            <img src="./images/css.png" alt="" class="lang-img">
+                            <span class="lang-name">CSS</span>
+                        </figure>
+                        <figure class="lang-img-wrap">
+                            <img src="./images/javascript.png" alt="" class="lang-img">
+                            <span class="lang-name">JavaScript</span>
+                        </figure>
+                    </div>
+                </div>
+                <div class="modal-half modal-contact">
+                    <h3 class="modal-title modal-title-white">Contact Me!</h3>
+                    <h4 class="modal-subtitle modal-subtitle-white">I look forward to hearing from you.</h4>
+                    <form onsubmit="contact(event)" id="contact--form">
+                        <div class="form-item">
+                            <label for="name" class="form-item-label">Name</label>
+                            <input type="text" name="user_name" class="input" required></input>
+                        </div>
+                        <div class="form-item">
+                            <label for="email" class="form-item-label">E-mail</label>
+                            <input type="text" name="user_email" class="input" required></input>
+                        </div>
+                        <div class="form-item">
+                            <label for="message" class="form-item-label">Message</label>
+                            <textarea type="text" name="message" class="input" required></textarea>
+                        </div>
+                        <button id="contact-submit" class="form-submit click">SEND</button>
+                    </form>
+                    <div class="modal-overlay modal-overlay-loading">
+                        <i class="fas fa-spinner"></i>
+                    </div>
+                    <div class="modal-overlay modal-overlay-complete">
+                        Message Sent.
+                    </div>
+                    <div class="modal-overlay modal-overlay-fail">
+                        error
+                    </div>
+                </div>
+                <i class="fas fa-times modal-exit click" onclick="toggleModal()"></i>
+            </div>
+        </section>
+        <section id="projects">
+            <div class="container">
+                <div class="row">
+                    <h1 class="section-title">Some of my <b class="blue">Projects</b></h1>
+                    <ul class="proj-list">
+                        <li class="proj-item">
+                            <div class="proj-wrapper" id="blackjack">
+                                <img src="./images/Blackjack.png" alt="" class="proj-img">
+                                <div class="proj-wrapper-bg">
+                                    <div class="proj-description">
+                                        <h3 class="proj-text proj-description-title">Blackjack</h3>
+                                        <h4 class="proj-text proj-description-subtitle">HTML, CSS, JavaScript</h4>
+                                        <p class="proj-text proj-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores cum
+                                            dolores delectus enim iste optio illum excepturi praesentium quis accusantium.</p>
+                                        <div class="proj-description-links">
+                                            <a href="https://github.com/MicahKatz03" target="_blank" class="proj-link click" id="git"><i
+                                                class="fa-brands fa-github"></i></a>
+                                            <a href="https://micahkatz03.github.io/js-Blackjack/" target="_blank" class="proj-link click" id="link"><i 
+                                                class="fa-solid fa-link"></i></a>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="proj-item">
+                            <div class="proj-wrapper" id="counter">
+                                <img src="./images/Counter.png" alt="" class="proj-img">
+                                <div class="proj-wrapper-bg">
+                                    <div class="proj-description">
+                                        <h3 class="proj-text proj-description-title">Counter</h3>
+                                        <h4 class="proj-text proj-description-subtitle">HTML, CSS, JavaScript</h4>
+                                        <p class="proj-text proj-p">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores cum
+                                            dolores delectus enim iste optio illum excepturi praesentium quis accusantium.</p>
+                                        <div class="proj-description-links">
+                                            <a href="https://github.com/MicahKatz03" target="_blank" class="proj-link click" id="git"><i
+                                                class="fa-brands fa-github"></i></a>
+                                            <a href="https://micahkatz03.github.io/js-counter/" target="_blank" class="proj-link click" id="link"><i 
+                                                class="fa-solid fa-link"></i></a>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="container footer-container">
+                <figure>
+                    <div id="me-img-wrapper">
+                        <img id="me-img" src="./images/me.jpg" alt="">
+                    </div>
+                </figure>
+                    <div class="footer-links">
+                        <a href="https://github.com/MicahKatz03" class="foot-link link-effect link-effect-white" target="_blank">GitHub</a>
+                        <a href="#" class="foot-link link-effect link-effect-white" onclick="toggleModal()">Contact</a>
+                    </div>
+                    <div class="footer-end">Made By Micah Katz, 2022</div>
+            </div>
+        </footer>
+    <script src="./index.js"></script>
+</body>
+
+</html>
